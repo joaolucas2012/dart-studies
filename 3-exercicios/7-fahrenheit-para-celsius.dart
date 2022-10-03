@@ -1,4 +1,4 @@
-import 'dart:io';
+import '0-funcao-global-leitura-de-valores.dart' as global;
 
 void main() {
   /* 
@@ -12,18 +12,13 @@ void main() {
     ---------- = ---------- => C = ----------
         5            9                  9
   */
-  double fahrenheit =
-      askAndGetCorrespondingValue("Digite a temperatura em graus Fahrenheit: ");
+  double fahrenheit = global.askAndGetCorrespondingDoubleValue(
+      "Digite a temperatura em graus Fahrenheit: ");
 
   printCelsius(fahrenheit, convertFahrenheitToCelsius(fahrenheit));
 }
 
 // funções
-double askAndGetCorrespondingValue(String frase) {
-  print("$frase");
-  return double.parse(stdin.readLineSync()!);
-}
-
 double convertFahrenheitToCelsius(double fahrenheit) {
   return (5 * fahrenheit - 160) / 9;
 }

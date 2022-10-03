@@ -1,13 +1,15 @@
-import 'dart:io';
+import '0-funcao-global-leitura-de-valores.dart' as global;
 
 void main() {
   /* 
     25) Faça um algoritmo para ler: número da conta do cliente, saldo, débito e crédito. Após, calcular e escrever o saldo atual (saldo atual = saldo - débito + crédito). Também testar se saldo atual for maior ou igual a zero escrever a mensagem 'Saldo Positivo', senão escrever a mensagem 'Saldo Negativo'. 
   */
-  double numConta = askAndGetCorrespondingValue("Digite o numero da conta: ");
-  double saldo = askAndGetCorrespondingValue("Digite seu saldo: ");
-  double debito = askAndGetCorrespondingValue("Digite o débito: ");
-  double credito = askAndGetCorrespondingValue("Digite o crédito: ");
+  double numConta =
+      global.askAndGetCorrespondingDoubleValue("Digite o numero da conta: ");
+  double saldo = global.askAndGetCorrespondingDoubleValue("Digite seu saldo: ");
+  double debito = global.askAndGetCorrespondingDoubleValue("Digite o débito: ");
+  double credito =
+      global.askAndGetCorrespondingDoubleValue("Digite o crédito: ");
 
   double saldoAtual = calcSaldoAtual(saldo, debito, credito);
   print("\nSaldo atual: $saldoAtual\n");
@@ -15,11 +17,6 @@ void main() {
 }
 
 // funções
-double askAndGetCorrespondingValue(String frase) {
-  print("$frase");
-  return double.parse(stdin.readLineSync()!);
-}
-
 double calcSaldoAtual(double saldo, double debito, double credito) {
   return saldo - debito + credito;
 }

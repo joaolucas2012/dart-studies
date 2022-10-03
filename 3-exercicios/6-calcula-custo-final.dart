@@ -1,4 +1,4 @@
-import 'dart:io';
+import '0-funcao-global-leitura-de-valores.dart' as global;
 
 void main() {
   /*
@@ -6,19 +6,14 @@ void main() {
   */
   double percentualDistribuidor = 0.28;
   double impostos = 0.45;
-  double custoDeFabrica =
-      askAndGetCorrespondingValue("Digite o custo de fábrica do carro: ");
+  double custoDeFabrica = global.askAndGetCorrespondingDoubleValue(
+      "Digite o custo de fábrica do carro: ");
 
   printNewCarCost(
       calcFinalCost(custoDeFabrica, percentualDistribuidor, impostos));
 }
 
 // funções
-double askAndGetCorrespondingValue(String frase) {
-  print("$frase");
-  return double.parse(stdin.readLineSync()!);
-}
-
 double calcFinalCost(
     double custoDeFabrica, double percentualDistribuidor, double impostos) {
   return custoDeFabrica +
@@ -27,5 +22,5 @@ double calcFinalCost(
 }
 
 void printNewCarCost(double finalCost) {
-  print("O custo final do carro novo é: $finalCost.");
+  print("O custo final do carro novo é: ${finalCost.toStringAsFixed(2)}.");
 }

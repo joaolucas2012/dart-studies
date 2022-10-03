@@ -1,15 +1,15 @@
-import 'dart:io';
+import '0-funcao-global-leitura-de-valores.dart' as global;
 
 void main() {
   /* 
   7) Faça um algoritmo que leia a idade de uma pessoa expressa em anos, meses e dias e escreva a idade dessa pessoa expressa apenas em dias. Considerar ano com 365 dias e mês com 30 dias. 
   */
-  print("Digite quantos anos você tem: ");
-  int anos = yearsToDays(int.parse(stdin.readLineSync()!));
-  print("Digite quantos meses você tem: ");
-  int meses = monthsToDays(int.parse(stdin.readLineSync()!));
-  print("Digite quantos dias você tem: ");
-  int dias = int.parse(stdin.readLineSync()!);
+  int anos = yearsToDays(
+      global.askAndGetCorrespondingIntValue("Digite quantos anos você tem: "));
+  int meses = monthsToDays(
+      global.askAndGetCorrespondingIntValue("Digite quantos meses você tem: "));
+  int dias =
+      global.askAndGetCorrespondingIntValue("Digite quantos dias você tem: ");
 
   print("Você tem ${sumDays(anos, meses, dias)} dias de vida!");
 }

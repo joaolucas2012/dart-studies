@@ -1,15 +1,15 @@
-import 'dart:io';
+import '0-funcao-global-leitura-de-valores.dart' as global;
 
 void main() {
   /* 
     26) Faça um algoritmo para ler: quantidade atual em estoque, quantidade máxima em estoque e quantidade mínima em estoque de um produto. Calcular e escrever a quantidade média ((quantidade média = quantidade máxima + quantidade mínima)/2). Se a quantidade em estoque for maior ou igual a quantidade média escrever a mensagem 'Não efetuar compra', senão escrever a mensagem 'Efetuar compra'. 
   */
-  int qtdAtualEstoque =
-      askAndGetCorrespondingValue("Digite a quantidade atual de estoque: ");
-  int qtdMaximaEstoque =
-      askAndGetCorrespondingValue("Digite a quantidade máxima de estoque: ");
-  int qtdMinimaEstoque =
-      askAndGetCorrespondingValue("Digite a quantidade mínima de estoque: ");
+  int qtdAtualEstoque = global
+      .askAndGetCorrespondingIntValue("Digite a quantidade atual de estoque: ");
+  int qtdMaximaEstoque = global.askAndGetCorrespondingIntValue(
+      "Digite a quantidade máxima de estoque: ");
+  int qtdMinimaEstoque = global.askAndGetCorrespondingIntValue(
+      "Digite a quantidade mínima de estoque: ");
   double qtdMediaEstoque =
       calcAverageQuantity(qtdMaximaEstoque, qtdMinimaEstoque);
 
@@ -18,11 +18,6 @@ void main() {
 }
 
 // funções
-int askAndGetCorrespondingValue(String frase) {
-  print("$frase");
-  return int.parse(stdin.readLineSync()!);
-}
-
 double calcAverageQuantity(int qtdMaximaEstoque, int qtdMinimaEstoque) {
   return (qtdMaximaEstoque + qtdMinimaEstoque) / 2;
 }
