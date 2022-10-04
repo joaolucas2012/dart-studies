@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'dart:math';
-import '3-exercicios/0-funcao-global-leitura-de-valores.dart' as global;
+import '0-funcao-global-leitura-de-valores.dart' as global;
 
 void main() {
   /* 
