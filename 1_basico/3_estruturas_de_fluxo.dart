@@ -1,10 +1,10 @@
 void main() {
   // Estruturas de fluxo
   // bool seguirEmFrente = false;
-  bool seguirEmFrente = true;
+  bool? seguirEmFrente;
 
   // **** IF **** //
-  if (seguirEmFrente) {
+  if (seguirEmFrente!) {
     print('Andar');
   } else {
     print('Parar');

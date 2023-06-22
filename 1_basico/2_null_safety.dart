@@ -3,7 +3,6 @@ void main() {
 
   // ? significa que a variavel pode ser nula
   String? nome;
-  nome = 'ABC';
 
   // ! significa que a variavel não pode ser nula
   print(nome!);

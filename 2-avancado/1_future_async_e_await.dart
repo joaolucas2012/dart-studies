@@ -1,6 +1,5 @@
 void main() async {
   // ***** FUTURE, ASYNC E AWAIT ***** //
-  String nome = "João";
   late String cep;
   late int result;
 

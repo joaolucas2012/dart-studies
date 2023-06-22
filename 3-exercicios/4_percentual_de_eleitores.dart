@@ -1,4 +1,4 @@
-import '0-funcao-global-leitura-de-valores.dart' as global;
+import '0_funcao_global_leitura_de_valores.dart' as global;
 
 void main() {
   /*

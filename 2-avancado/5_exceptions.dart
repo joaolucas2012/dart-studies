@@ -1,7 +1,7 @@
 void main() {
   try {
     // Tentar fazer alguma coisa
-    print((2 / 0).toInt());
+    print(2 ~/ 0);
   } catch (e, stackSTrace) {
     // pegar o erro
     print("\n\nErro: $e\n\n\nPilha de erros:\n\n$stackSTrace");
@@ -13,7 +13,8 @@ void main() {
 
   String email = "J@gmail.com";
   String password = '123';
-  if (password.length < 6) throw CustomErr;
+  if (!email.contains('@')) throw CustomErr('Email incorreto!');
+  if (password.length < 6) throw PasswordLengthError;
 }
 
 // Exceptions
