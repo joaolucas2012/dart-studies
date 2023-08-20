@@ -33,3 +33,17 @@ class Pagamento {
     }
   }
 }
+
+/* Mais opções de enum */
+enum StatusPagamento { pendente, pago, reembolsado }
+
+//////////
+
+enum Options {
+  op1("first"),
+  op2("second");
+
+  final String value;
+
+  const Options(this.value);
+}
